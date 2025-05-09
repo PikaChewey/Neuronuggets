@@ -5,7 +5,7 @@ const nextConfig = {
     domains: [],
   },
   eslint: {
-    // allows production builds to successfully complete even ESLint errors.
+    // allows build complete even if ESLint errors.
     ignoreDuringBuilds: true,
   },
   swcMinify: true, // SWC minification
