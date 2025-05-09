@@ -1,0 +1,720 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Scientific Typography Enhancements */
+:root {
+  --font-grotesk: 'var(--font-space-grotesk)', system-ui, sans-serif;
+  --font-serif: 'var(--font-source-serif)', Georgia, serif;
+  --font-mono: 'var(--font-jetbrains-mono)', monospace;
+  --letter-spacing-tight: -0.025em;
+  --letter-spacing-wide: 0.05em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-grotesk);
+  letter-spacing: var(--letter-spacing-tight);
+  font-weight: 600;
+}
+
+.title-hero, .title-large, .title-medium, .title-small {
+  line-height: 1.2;
+}
+
+body, p {
+  font-family: var(--font-serif);
+  letter-spacing: 0.01em;
+}
+
+code, pre, .mono {
+  font-family: var(--font-mono);
+  letter-spacing: -0.01em;
+}
+
+.scientific-number {
+  font-feature-settings: "tnum" on, "lnum" on;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Caption and small text */
+small, .caption, .text-xs, .text-sm {
+  letter-spacing: var(--letter-spacing-wide);
+  font-weight: 500;
+}
+
+:root {
+  /* primary colors */
+  --space-blue: #285a84; /* primary text color */
+  --space-blue-rgb: 40, 90, 132;
+  --lab-white: #ffffff; /* background color */
+  --lab-white-rgb: 255, 255, 255;
+  --precision-teal: #4A6670; /* secondary accent */
+  --precision-teal-rgb: 74, 102, 112;
+  
+  /* accent colors */
+  --analytical-amber: #A3C1DA; /* tertiary accent */
+  --analytical-amber-rgb: 163, 193, 218;
+  --neural-red: #ef6f53; /* primary accent */
+  --neural-red-rgb: 239, 111, 83;
+  
+   /* ADD DARK MODE SWITCH EVENTUALLY */
+  /* Light mode variants */
+  --space-blue-light: #3a6b95; /* lighter primary */
+  --space-blue-light-rgb: 58, 107, 149;
+  --neural-red-light: #f1836b; /* lighter accent */
+  --neural-red-light-rgb: 241, 131, 107;
+  --analytical-amber-light: #b9d0e1; /* lighter vertiary */
+  --analytical-amber-light-rgb: 185, 208, 225;
+  --precision-teal-light: #5b7682; /* lighter secondary */
+  --precision-teal-light-rgb: 91, 118, 130;
+  
+  /* functional colors */
+  --gray: #ACACAC;
+  --gray-rgb: 172, 172, 172;
+  --gray-light: #E0E0E0;
+  --gray-light-rgb: 224, 224, 224;
+  --gray-dark: #5C5C5C;
+  --gray-dark-rgb: 92, 92, 92;
+  --black: #232323;
+  --black-rgb: 35, 35, 35;
+  --white: #ffffff;
+  --white-rgb: 255, 255, 255;
+  --text-light: #f4f5f7;
+  --text-light-rgb: 244, 245, 247;
+  
+  /* system colors */
+  --success: #4CAF50;
+  --success-rgb: 76, 175, 80;
+  --warning: #FF9800;
+  --warning-rgb: 255, 152, 0;
+  --error: #F44336;
+  --error-rgb: 244, 67, 54;
+  
+  /* background and text */
+  --background: var(--lab-white);
+  --background-rgb: var(--lab-white-rgb);
+  --foreground: var(--space-blue);
+  --foreground-rgb: var(--space-blue-rgb);
+  --primary: var(--space-blue);
+  --primary-rgb: var(--space-blue-rgb);
+  --primary-foreground: var(--text-light);
+  --primary-foreground-rgb: var(--text-light-rgb);
+  --secondary: var(--precision-teal);
+  --secondary-rgb: var(--precision-teal-rgb);
+  --secondary-foreground: var(--text-light);
+  --secondary-foreground-rgb: var(--text-light-rgb);
+  --accent: var(--neural-red);
+  --accent-rgb: var(--neural-red-rgb);
+  --accent-foreground: var(--text-light);
+  --accent-foreground-rgb: var(--text-light-rgb);
+  --muted: var(--gray-light);
+  --muted-rgb: var(--gray-light-rgb);
+  --muted-foreground: var(--gray-dark);
+  --muted-foreground-rgb: var(--gray-dark-rgb);
+  
+  /* other */
+  --card: var(--lab-white);
+  --card-rgb: var(--lab-white-rgb);
+  --card-foreground: var(--space-blue);
+  --card-foreground-rgb: var(--space-blue-rgb);
+  --popover: var(--lab-white);
+  --popover-rgb: var(--lab-white-rgb);
+  --popover-foreground: var(--space-blue);
+  --popover-foreground-rgb: var(--space-blue-rgb);
+  --border: var(--gray-light);
+  --border-rgb: var(--gray-light-rgb);
+  --input: var(--gray-light);
+  --input-rgb: var(--gray-light-rgb);
+  
+  /* shadows */
+  --shadow-sm: 0 1px 2px rgba(40, 90, 132, 0.05);
+  --shadow: 0 4px 6px rgba(40, 90, 132, 0.1);
+  --shadow-md: 0 6px 10px rgba(40, 90, 132, 0.15);
+  --shadow-lg: 0 10px 15px rgba(40, 90, 132, 0.2);
+  --shadow-xl: 0 15px 25px rgba(40, 90, 132, 0.25);
+  
+  /* radii */
+  --radius-sm: 0.125rem;
+  --radius: 0.25rem;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-2xl: 1rem;
+  --radius-3xl: 1.5rem;
+  --radius-full: 9999px;
+}
+
+.dark {
+  --background: var(--space-blue);
+  --background-rgb: var(--space-blue-rgb);
+  --foreground: var(--text-light);
+  --foreground-rgb: var(--text-light-rgb);
+  --primary: var(--precision-teal);
+  --primary-rgb: var(--precision-teal-rgb);
+  --primary-foreground: var(--text-light);
+  --primary-foreground-rgb: var(--text-light-rgb);
+  --secondary: var(--analytical-amber);
+  --secondary-rgb: var(--analytical-amber-rgb);
+  --secondary-foreground: var(--space-blue);
+  --secondary-foreground-rgb: var(--space-blue-rgb);
+  --accent: var(--neural-red);
+  --accent-rgb: var(--neural-red-rgb);
+  --accent-foreground: var(--text-light);
+  --accent-foreground-rgb: var(--text-light-rgb);
+  --muted: var(--space-blue-light);
+  --muted-rgb: var(--space-blue-light-rgb);
+  --muted-foreground: var(--text-light);
+  --muted-foreground-rgb: var(--text-light-rgb);
+  --card: var(--space-blue);
+  --card-rgb: var(--space-blue-rgb);
+  --card-foreground: var(--text-light);
+  --card-foreground-rgb: var(--text-light-rgb);
+  --popover: var(--space-blue);
+  --popover-rgb: var(--space-blue-rgb);
+  --popover-foreground: var(--text-light);
+  --popover-foreground-rgb: var(--text-light-rgb);
+  --border: var(--space-blue-light);
+  --border-rgb: var(--space-blue-light-rgb);
+  --input: var(--space-blue-light);
+  --input-rgb: var(--space-blue-light-rgb);
+}
+
+/* base  */
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-feature-settings: "rlig" 1, "calt" 1;
+}
+
+/*  scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--muted);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+/* selection */
+::selection {
+  background-color: var(--accent);
+  color: var(--accent-foreground);
+}
+
+/* neural network gradients */
+.neural-gradient {
+  background: linear-gradient(135deg, var(--space-blue) 0%, var(--precision-teal) 50%, var(--neural-red) 100%);
+}
+
+.amber-gradient {
+  background: linear-gradient(135deg, var(--analytical-amber) 0%, var(--neural-red) 100%);
+}
+
+.teal-gradient {
+  background: linear-gradient(135deg, var(--space-blue) 0%, var(--precision-teal) 100%);
+}
+
+.neural-text {
+  background: linear-gradient(135deg, var(--precision-teal) 0%, var(--neural-red) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+/* animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.animate-slideUp {
+  animation: slideUp 0.5s ease-out forwards;
+}
+
+.animate-slideDown {
+  animation: slideDown 0.5s ease-out forwards;
+}
+
+.animate-pulse {
+  animation: pulse 2s infinite;
+}
+
+/* anime delays */
+.delay-100 {
+  animation-delay: 100ms;
+}
+
+.delay-200 {
+  animation-delay: 200ms;
+}
+
+.delay-300 {
+  animation-delay: 300ms;
+}
+
+.delay-400 {
+  animation-delay: 400ms;
+}
+
+.delay-500 {
+  animation-delay: 500ms;
+}
+
+/* golden ratio container */
+.golden-container {
+  max-width: 1618px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* typography */
+.title-hero {
+  @apply text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight;
+  line-height: 1.1;
+}
+
+.title-large {
+  @apply text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight;
+  line-height: 1.2;
+}
+
+.title-medium {
+  @apply text-2xl md:text-3xl lg:text-4xl font-bold;
+  line-height: 1.3;
+}
+
+.title-small {
+  @apply text-xl md:text-2xl font-semibold;
+  line-height: 1.4;
+}
+
+.body-large {
+  @apply text-lg leading-relaxed;
+}
+
+.body {
+  @apply text-base leading-relaxed;
+}
+
+.body-small {
+  @apply text-sm leading-relaxed;
+}
+
+.caption {
+  @apply text-xs leading-normal;
+}
+
+/* button styll fam */
+.btn {
+  @apply px-4 py-2 rounded-lg font-medium transition-all duration-200 inline-flex items-center justify-center;
+}
+
+.btn-primary {
+  @apply bg-precision-teal text-lab-white hover:bg-opacity-80 shadow-md hover:shadow-lg;
+}
+
+.btn-secondary {
+  @apply bg-lab-white/10 text-lab-white border border-lab-white/20 py-2 px-6 
+    rounded-md hover:bg-lab-white/20 transition-colors duration-300;
+}
+
+.btn-neural {
+  @apply bg-accent text-lab-white;
+}
+
+.btn-outline {
+  @apply bg-transparent border border-precision-teal text-precision-teal hover:bg-precision-teal hover:text-lab-white;
+}
+
+.btn-ghost {
+  @apply bg-transparent hover:bg-gray-200 text-space-blue;
+}
+
+.button-accent {
+  @apply bg-accent text-lab-white hover:bg-opacity-80 shadow-md hover:shadow-lg;
+}
+
+/* card styles */
+.card {
+  @apply bg-card text-card-foreground rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-200;
+}
+
+.card-hover {
+  @apply hover:-translate-y-1 hover:shadow-lg transition-all duration-200;
+}
+
+.card-outlined {
+  @apply bg-transparent border border-lab-white/20 text-lab-white p-6 rounded-lg shadow-md;
+}
+
+/* form elements */
+.input {
+  @apply w-full p-3 border border-lab-white/30 rounded-md bg-space-blue/20 text-lab-white
+    focus:outline-none focus:border-precision-teal focus:ring-1 focus:ring-precision-teal
+    placeholder:text-lab-white/50;
+}
+
+.textarea {
+  @apply px-4 py-2 bg-input text-foreground rounded-lg border border-border focus:border-precision-teal focus:ring-1 focus:ring-precision-teal outline-none transition-all duration-200;
+}
+
+.select {
+  @apply px-4 py-2 bg-input text-foreground rounded-lg border border-border focus:border-precision-teal focus:ring-1 focus:ring-precision-teal outline-none transition-all duration-200;
+}
+
+/* badge styles */
+.badge {
+  @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+}
+
+.badge-primary {
+  @apply bg-precision-teal text-lab-white;
+}
+
+.badge-secondary {
+  @apply bg-analytical-amber text-space-blue;
+}
+
+.badge-accent {
+  @apply bg-accent text-lab-white;
+}
+
+.badge-outline {
+  @apply bg-transparent border border-gray-300 text-gray-700;
+}
+
+/* link styles */
+.link {
+  @apply text-precision-teal hover:text-precision-teal/80 hover:underline transition-all duration-200;
+}
+
+.link-nav {
+  @apply text-foreground hover:text-accent transition-all duration-200;
+}
+
+.link-nav-active {
+  @apply text-accent font-medium;
+}
+
+/* neuron decoration */
+.neuron-decoration {
+  @apply absolute rounded-full bg-precision-teal/30 blur-xl;
+}
+
+.neural-dot {
+  @apply absolute w-1.5 h-1.5 rounded-full bg-accent;
+}
+
+.neural-line {
+  @apply absolute h-px bg-precision-teal/30;
+}
+
+/* responsive util */
+.container-fluid {
+  @apply w-full px-4 md:px-6 lg:px-8;
+}
+
+/* custom cmpts */
+.nav-glass {
+  @apply bg-space-blue/80 backdrop-blur-md shadow-sm z-50;
+}
+
+/* scientific decorations */
+.science-pattern {
+  background-image: radial-gradient(var(--precision-teal) 1px, transparent 1px);
+  background-size: 20px 20px;
+  opacity: 0.05;
+}
+
+/* neural network-inspired gradients */
+.gradient-neural {
+  background: linear-gradient(135deg, var(--space-blue) 0%, var(--precision-teal) 100%);
+}
+
+.gradient-scientific {
+  background: linear-gradient(to right, var(--space-blue) 0%, var(--precision-teal) 100%);
+}
+
+.gradient-coral {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--analytical-amber) 100%);
+}
+
+/* animation classes */
+@layer utilities {
+  .animate-delay-100 {
+    animation-delay: 100ms;
+  }
+  .animate-delay-200 {
+    animation-delay: 200ms;
+  }
+  .animate-delay-300 {
+    animation-delay: 300ms;
+  }
+  .animate-delay-400 {
+    animation-delay: 400ms;
+  }
+  .animate-delay-500 {
+    animation-delay: 500ms;
+  }
+}
+
+/* golden ratio container */
+@layer utilities {
+  .scientific-grid {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: 1.5rem;
+    row-gap: var(--section-spacing);
+  }
+  
+  /* asymmetrical layouts */
+  .asymmetric-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.618fr; /* golden ratio */
+    gap: var(--section-spacing);
+  }
+  
+  .asymmetric-layout-reverse {
+    display: grid;
+    grid-template-columns: 1.618fr 1fr; /* gold reverse */
+    gap: var(--section-spacing);
+  }
+}
+
+/* scientific dropcap */
+.dropcap:first-letter {
+  float: left;
+  font-size: 3.2em;
+  line-height: 0.8;
+  margin-right: 0.1em;
+  color: theme('colors.neural-red');
+  font-family: var(--font-grotesk);
+  letter-spacing: -1px;
+}
+
+/* scientific orbit animations */
+.scientific-orbit {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.scientific-orbit::before {
+  content: '';
+  position: absolute;
+  border: 1px solid rgba(10, 17, 40, 0.2);
+  border-radius: 50%;
+  top: -30%;
+  left: -30%;
+  width: 160%;
+  height: 160%;
+  animation: spin 20s linear infinite;
+}
+
+/* neural activation ripple effect */
+.neural-activation {
+  position: relative;
+  overflow: hidden;
+}
+
+.neural-activation::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 166, 48, 0.5);
+  opacity: 0;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.neural-activation:active::after {
+  animation: ripple 0.6s linear;
+}
+
+@keyframes ripple {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(20);
+    opacity: 0;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* typography w/  fibonacci sequence scale */
+@layer components {
+  .title-xl {
+    @apply font-display text-4xl md:text-5xl font-bold tracking-tight text-foreground;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+  }
+  
+  .title-lg {
+    @apply font-display text-3xl md:text-4xl font-bold tracking-tight text-foreground;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+  }
+  
+  .title-md {
+    @apply font-display text-2xl md:text-3xl font-bold tracking-tight text-foreground;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+  }
+  
+  .title-sm {
+    @apply font-display text-xl md:text-2xl font-bold tracking-tight text-foreground;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+  }
+  
+  .body-lg {
+    @apply font-serif text-lg leading-relaxed text-foreground;
+  }
+  
+  .body-md {
+    @apply font-serif text-base leading-relaxed text-foreground;
+  }
+  
+  .body-sm {
+    @apply font-serif text-sm leading-relaxed text-foreground;
+  }
+  
+  .caption {
+    @apply font-sans text-xs uppercase tracking-wider text-precision-teal;
+  }
+  
+  .tagline {
+    @apply font-sans text-xl md:text-2xl italic font-light text-neural-red;
+  }
+  
+  /* mathematical elements */
+  .equation {
+    @apply font-mono text-foreground py-2 px-4 bg-opacity-10 bg-precision-teal rounded;
+    letter-spacing: 0.05em;
+  }
+}
+
+/* component styl */
+@layer components {
+  /* navigation styl */
+  .nav-link {
+    @apply relative py-2 px-4 text-foreground font-medium transition-all duration-200;
+  }
+  
+  .nav-link::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-neural-red transition-all duration-200;
+  }
+  
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+  
+  .nav-link.active::after {
+    @apply w-full bg-neural-red;
+  }
+  
+  /* butt styl */
+  .btn-primary {
+    @apply relative px-6 py-3 bg-neural-red text-gray-100 rounded font-medium transition-all duration-200 overflow-hidden neural-activation;
+  }
+  
+  .btn-primary:hover {
+    @apply shadow-md transform -translate-y-0.5;
+  }
+  
+  .btn-secondary {
+    @apply px-6 py-3 border border-space-blue text-foreground rounded font-medium transition-all duration-200 neural-activation;
+  }
+  
+  .btn-secondary:hover {
+    @apply bg-space-blue bg-opacity-10;
+  }
+  
+  /* card styl */
+  .scientific-card {
+    @apply bg-card rounded shadow-md transition-all duration-200 border border-solid border-opacity-10 border-border;
+    min-height: 100px;
+  }
+  
+  .scientific-card:hover {
+    @apply shadow-lg transform -translate-y-1;
+  }
+  
+  /* form field styl */
+  .scientific-input {
+    @apply w-full px-4 py-3 border border-border rounded bg-background text-foreground transition-all duration-200;
+  }
+  
+  .scientific-input:focus {
+    @apply border-neural-red border-opacity-100 outline-none shadow-md;
+  }
+  
+  /* custom underline for headings */
+  .precision-underline {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .precision-underline::after {
+    content: '';
+    position: absolute;
+    bottom: -0.2em;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(to right, var(--neural-red), rgba(216, 49, 91, 0.3));
+    border-radius: 2px;
+  }
+}
+
+.input-primary {
+  @apply bg-lab-white text-space-blue border border-gray-light rounded-md 
+    py-2 px-4 focus:outline-none focus:border-accent focus:ring-1 
+    focus:ring-accent transition-colors duration-300;
+} 
